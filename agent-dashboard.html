@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISTA Bank - Agent Dashboard</title>
+    <link rel="stylesheet" href="agent-styles.css">
+</head>
+<body>
+    <div class="agent-dashboard-flex">
+        <!-- Left Sidebar: Customer List -->
+        <aside class="customer-list-sidebar">
+            <header class="sidebar-header">
+                <h2>Recent Chats</h2>
+            </header>
+            <ul class="customer-list" id="customer-list">
+                <!-- Populated by JS -->
+            </ul>
+        </aside>
+
+        <!-- Right Panel: Chat Window -->
+        <main class="dashboard-main agent-chat-main">
+            <header class="dashboard-header agent-header">
+                <div class="bank-logo">
+                    <h1>VISTA</h1>
+                    <p>Banking Solutions</p>
+                </div>
+                <div class="user-info">
+                    <span id="agent-name">Welcome, Agent!</span>
+                    <button onclick="logout()" class="logout-btn">Logout</button>
+                </div>
+            </header>
+
+            <section class="chat-interface">
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <div class="chat-title" id="active-customer-name">
+                            <span class="chat-icon">👤</span>
+                            Customer Name
+                        </div>
+                        <div class="chat-status">
+                            <span class="status-dot online"></span>
+                            Online
+                        </div>
+                    </div>
+                    <div class="chat-messages" id="chat-messages">
+                        <!-- No default messages, will be loaded by JS -->
+                    </div>
+                    <div class="chat-input-area">
+                        <div class="speech-center">
+                            <div class="speech-icon-container" onclick="toggleSpeechRecognition()">
+                                <div class="speech-icon" id="speech-icon">
+                                    <svg viewBox="0 0 24 24" width="48" height="48">
+                                        <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <div class="speech-text">Click to speak</div>
+                            </div>
+                        </div>
+                        <div class="text-input-container">
+                            <div class="input-group">
+                                <input type="text" id="chat-input" placeholder="Type your message..." onkeypress="handleChatInput(event)">
+                                <button class="send-btn" onclick="sendMessage()">
+                                    <svg viewBox="0 0 24 24" width="20" height="20">
+                                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" fill="currentColor"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="agent-script.js"></script>
+</body>
+</html> 

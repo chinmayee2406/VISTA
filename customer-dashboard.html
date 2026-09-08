@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISTA Bank - Customer Dashboard</title>
+    <link rel="stylesheet" href="customer-styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="bank-logo">
+                <h1>VISTA</h1>
+                <p>Banking Solutions</p>
+            </div>
+            <div class="user-info">
+                <span id="user-name">Welcome, Customer123</span>
+                <button onclick="logout()" class="logout-btn">Logout</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <h2>Welcome to Your VISTA Bank Dashboard</h2>
+                <p>Manage your accounts, track transactions, and get support whenever you need it.</p>
+            </section>
+
+            <!-- Important Messages Section -->
+            <section class="messages-section">
+                <h3>Important Messages & Updates</h3>
+                <div class="message-cards">
+                    <div class="message-card urgent">
+                        <div class="message-icon">⚠️</div>
+                        <div class="message-content">
+                            <h4>Security Alert</h4>
+                            <p>Please update your password regularly and never share your credentials with anyone.</p>
+                            <span class="message-time">2 hours ago</span>
+                        </div>
+                    </div>
+                    
+                    <div class="message-card info">
+                        <div class="message-icon">ℹ️</div>
+                        <div class="message-content">
+                            <h4>New Features Available</h4>
+                            <p>You can now use our new mobile banking app with enhanced security features.</p>
+                            <span class="message-time">1 day ago</span>
+                        </div>
+                    </div>
+                    
+                    <div class="message-card success">
+                        <div class="message-icon">✅</div>
+                        <div class="message-content">
+                            <h4>Account Verified</h4>
+                            <p>Your account has been successfully verified. All features are now available.</p>
+                            <span class="message-time">3 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Actions Section -->
+            <section class="quick-actions">
+                <h3>Quick Actions</h3>
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="showFeature('balance')">
+                        <span class="action-icon">💰</span>
+                        Check Balance
+                    </button>
+                    <button class="action-btn" onclick="showFeature('transfer')">
+                        <span class="action-icon">💸</span>
+                        Transfer Money
+                    </button>
+                    <button class="action-btn" onclick="showFeature('statements')">
+                        <span class="action-icon">📄</span>
+                        View Statements
+                    </button>
+                    <button class="action-btn" onclick="showFeature('payments')">
+                        <span class="action-icon">💳</span>
+                        Bill Payments
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Chatbot Section -->
+        <div class="chatbot-container">
+            <!-- Chatbot Icon -->
+            <div class="chatbot-icon" onclick="toggleChatbot()">
+                <div class="chatbot-avatar">
+                    <span class="avatar-text">💬</span>
+                </div>
+                <div class="chatbot-status">Online</div>
+            </div>
+
+            <!-- Chat Window -->
+            <div class="chat-window" id="chat-window">
+                <div class="chat-header">
+                    <div class="chat-title">
+                        <span class="chatbot-avatar-small">💬</span>
+                        Chat Assistant
+                    </div>
+                    <button class="close-chat" onclick="toggleChatbot()">×</button>
+                </div>
+                
+                <div class="chat-messages" id="chat-messages">
+                    <!-- Default bot message removed -->
+                </div>
+                
+                <div class="chat-input-container">
+                    <div class="input-group">
+                        <input type="text" id="chat-input" placeholder="Type your message..." onkeypress="handleChatInput(event)">
+                        <button class="speech-btn" onclick="startSpeechRecognition()" title="Voice Input">
+                            🎤
+                        </button>
+                        <button class="send-btn" onclick="sendMessage()">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Agent Contact Box (hidden by default) -->
+        <div id="agent-contact-box" style="display:none; position:fixed; top:120px; right:30px; background:#fff; border:2px solid #3498db; border-radius:10px; box-shadow:0 4px 16px rgba(52,152,219,0.15); padding:1.5rem 2rem; z-index:2000; min-width:260px;">
+            <h3 style="color:#3498db; margin-top:0;">Contact Agent</h3>
+            <div id="agent-contact-content"></div>
+            <button onclick="document.getElementById('agent-contact-box').style.display='none'" style="margin-top:1rem; background:#3498db; color:#fff; border:none; border-radius:5px; padding:0.5rem 1.2rem; cursor:pointer;">Close</button>
+        </div>
+    </div>
+
+    <script src="customer-script.js"></script>
+
+</body>
+</html> 

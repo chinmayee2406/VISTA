@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISTA Bank - Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <div class="bank-logo">
+                <h1>VISTA</h1>
+                <marquee class="vista-abbr" behavior="scroll" direction="left" scrollamount="6">Visually Impaired Service Transformer Assistant</marquee>
+            </div>
+            
+            <div class="login-tabs">
+                <button class="tab-btn active" onclick="switchTab('customer')">Customer Login</button>
+                <button class="tab-btn" onclick="switchTab('agent')">Agent Login</button>
+            </div>
+
+            <div class="login-form" id="customer-login">
+                <h2>Customer Login</h2>
+                
+                <form id="password-login-form" onsubmit="return handleCustomerLogin(event)">
+                    <div class="input-group">
+                        <input type="text" id="customer-username" placeholder="Username" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="customer-password" placeholder="Password" required>
+                    </div>
+                    
+                    <button type="submit" class="login-btn">Login</button>
+                    <div class="register-link">
+                        <p>New to VISTA Bank? <a href="#" onclick="showRegistration()">Register here</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="login-form" id="agent-login" style="display: none;">
+                <h2>Agent Login</h2>
+                <div class="login-options">
+                    <button class="option-btn active" onclick="switchAgentLoginType('biometric')">Biometric</button>
+                    <button class="option-btn" onclick="switchAgentLoginType('password')">Password</button>
+                </div>
+
+                <div id="agent-biometric-form">
+                    <div class="biometric-container">
+                        <div class="biometric-icon">
+                            <svg viewBox="0 0 24 24" width="64" height="64">
+                                <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z" fill="#3498db"/>
+                            </svg>
+                        </div>
+                        <p class="biometric-text">Place your finger on the sensor</p>
+                        <button onclick="handleBiometricLogin()" class="login-btn biometric-btn">
+                            <span class="biometric-icon-small">👆</span> Authenticate
+                        </button>
+                    </div>
+                </div>
+
+                <form id="agent-password-form" style="display: none;" onsubmit="return handleAgentLogin(event)">
+                    <div class="input-group">
+                        <input type="text" id="agent-username" placeholder="Agent ID" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="agent-password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="login-btn">Login</button>
+                </form>
+            </div>
+
+            <div class="login-form" id="register" style="display: none;">
+                <h2>New Customer Registration</h2>
+                <form onsubmit="return handleRegistration(event)">
+                    <div class="input-group">
+                        <input type="text" id="reg-name" placeholder="Full Name" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" id="reg-mobile" placeholder="Mobile Number" pattern="[0-9]{10}" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="reg-email" placeholder="Email Address" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="date" id="reg-dob" required>
+                        <label class="date-label">Date of Birth</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="reg-password" placeholder="Create Password" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="reg-confirm-password" placeholder="Confirm Password" required>
+                    </div>
+                    <button type="submit" class="login-btn">Register</button>
+                    <div class="back-to-login">
+                        <p>Already have an account? <a href="#" onclick="backToLogin()">Login here</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

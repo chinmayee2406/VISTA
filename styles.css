@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #3dadb7, #0f0357 100%);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.bank-logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.bank-logo h1 {
+    color: #2c3e50;
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.bank-logo p {
+    color: #7f8c8d;
+    font-size: 1.1em;
+}
+
+.login-tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    color: #7f8c8d;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    margin-bottom: -2px;
+}
+
+.login-options {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.option-btn {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #3498db;
+    background: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    color: #3498db;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.option-btn.active {
+    background: #3498db;
+    color: white;
+}
+
+.login-form {
+    margin-top: 20px;
+}
+
+.login-form h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.date-label {
+    position: absolute;
+    left: 12px;
+    top: -8px;
+    background: white;
+    padding: 0 5px;
+    font-size: 0.8em;
+    color: #7f8c8d;
+}
+
+.otp-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.otp-group input {
+    flex: 1;
+}
+
+.timer {
+    color: #e74c3c;
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.login-btn:hover {
+    background: #2980b9;
+}
+
+.login-btn:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+}
+
+.register-link, .back-to-login {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.register-link p, .back-to-login p {
+    color: #7f8c8d;
+    font-size: 0.9em;
+}
+
+.register-link a, .back-to-login a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.register-link a:hover, .back-to-login a:hover {
+    text-decoration: underline;
+}
+
+/* Biometric Login Styles */
+.biometric-container {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.biometric-icon {
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+.biometric-text {
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.biometric-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #2ecc71;
+}
+
+.biometric-btn:hover {
+    background: #27ae60;
+}
+
+.biometric-icon-small {
+    font-size: 1.2em;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .login-container {
+        padding: 20px;
+    }
+    
+    .tab-btn {
+        font-size: 0.8em;
+        padding: 8px;
+    }
+} 
