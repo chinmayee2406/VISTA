@@ -1,4 +1,4 @@
-# Visually Impaired Banking Service Agent Transformer Assitant
+# VISTA - Visually Impaired Banking Service Agent Transformer Assitant
 VISTA is an intelligent voice assistant designed to empower visually impaired banking service agents by streamlining customer interactions. Built with a Transformer-based NLP model, it supports speech-to-text (STT), text-to-speech (TTS), and a seamless chat interface to enable efficient and accessible banking support. The system integrates a Flask backend with a modern, accessible frontend, providing features like secure login, real-time chat, and intelligent query handling.
 
 ## Problem Statement
